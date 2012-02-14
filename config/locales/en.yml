@@ -1,0 +1,152 @@
+--- 
+en: 
+  shared: 
+    admin: 
+      image_picker: 
+        image: image
+  plugins: 
+    profile_organizations: 
+      title: Profile Organizations
+    profile_departments: 
+      title: Profile Departments
+    profile_titles: 
+      title: Profile Titles
+    profile_affiliations: 
+      title: Profile Affiliations
+    profile_urls: 
+      title: Profile Urls
+    profile_emails: 
+      title: Profile Emails
+    profile_phones: 
+      title: Profile Phones
+    profiles: 
+      title: Profiles
+  admin: 
+    profile_organizations: 
+      actions: 
+        create_new: Add New Profile Organization
+        reorder: Reorder Profile Organizations
+        reorder_done: Done Reordering Profile Organizations
+      records: 
+        title: Profile Organizations
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Profile Organizations yet. Click "Add New Profile Organization" to add your first profile organization.
+      profile_organization: 
+        view_live_html: View this profile organization live <br/><em>(opens in a new window)</em>
+        edit: Edit this profile organization
+        delete: Remove this profile organization forever
+    profile_departments: 
+      actions: 
+        create_new: Add New Profile Department
+        reorder: Reorder Profile Departments
+        reorder_done: Done Reordering Profile Departments
+      records: 
+        title: Profile Departments
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Profile Departments yet. Click "Add New Profile Department" to add your first profile department.
+      profile_department: 
+        view_live_html: View this profile department live <br/><em>(opens in a new window)</em>
+        edit: Edit this profile department
+        delete: Remove this profile department forever
+    profile_titles: 
+      actions: 
+        create_new: Add New Profile Title
+        reorder: Reorder Profile Titles
+        reorder_done: Done Reordering Profile Titles
+      records: 
+        title: Profile Titles
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Profile Titles yet. Click "Add New Profile Title" to add your first profile title.
+      profile_title: 
+        view_live_html: View this profile title live <br/><em>(opens in a new window)</em>
+        edit: Edit this profile title
+        delete: Remove this profile title forever
+    profile_affiliations: 
+      actions: 
+        create_new: Add New Profile Affiliation
+        reorder: Reorder Profile Affiliations
+        reorder_done: Done Reordering Profile Affiliations
+      records: 
+        title: Profile Affiliations
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Profile Affiliations yet. Click "Add New Profile Affiliation" to add your first profile affiliation.
+      profile_affiliation: 
+        view_live_html: View this profile affiliation live <br/><em>(opens in a new window)</em>
+        edit: Edit this profile affiliation
+        delete: Remove this profile affiliation forever
+    profile_urls: 
+      actions: 
+        create_new: Add New Profile Url
+        reorder: Reorder Profile Urls
+        reorder_done: Done Reordering Profile Urls
+      records: 
+        title: Profile Urls
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Profile Urls yet. Click "Add New Profile Url" to add your first profile url.
+      profile_url: 
+        view_live_html: View this profile url live <br/><em>(opens in a new window)</em>
+        edit: Edit this profile url
+        delete: Remove this profile url forever
+    profile_emails: 
+      actions: 
+        create_new: Add New Profile Email
+        reorder: Reorder Profile Emails
+        reorder_done: Done Reordering Profile Emails
+      records: 
+        title: Profile Emails
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Profile Emails yet. Click "Add New Profile Email" to add your first profile email.
+      profile_email: 
+        view_live_html: View this profile email live <br/><em>(opens in a new window)</em>
+        edit: Edit this profile email
+        delete: Remove this profile email forever
+    profile_phones: 
+      actions: 
+        create_new: Add New Profile Phone
+        reorder: Reorder Profile Phones
+        reorder_done: Done Reordering Profile Phones
+      records: 
+        title: Profile Phones
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Profile Phones yet. Click "Add New Profile Phone" to add your first profile phone.
+      profile_phone: 
+        view_live_html: View this profile phone live <br/><em>(opens in a new window)</em>
+        edit: Edit this profile phone
+        delete: Remove this profile phone forever
+    profiles: 
+      actions: 
+        create_new: Add New Profile
+        reorder: Reorder Profiles
+        reorder_done: Done Reordering Profiles
+      records: 
+        title: Profiles
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Profiles yet. Click "Add New Profile" to add your first profile.
+      profile: 
+        view_live_html: View this profile live <br/><em>(opens in a new window)</em>
+        edit: Edit this profile
+        delete: Remove this profile forever
+  profile_organizations: 
+    show: 
+      other: Other Profile Organizations
+  profile_departments: 
+    show: 
+      other: Other Profile Departments
+  profile_titles: 
+    show: 
+      other: Other Profile Titles
+  profile_affiliations: 
+    show: 
+      other: Other Profile Affiliations
+  profile_urls: 
+    show: 
+      other: Other Profile Urls
+  profile_emails: 
+    show: 
+      other: Other Profile Emails
+  profile_phones: 
+    show: 
+      other: Other Profile Phones
+  profiles: 
+    show: 
+      other: Other Profiles

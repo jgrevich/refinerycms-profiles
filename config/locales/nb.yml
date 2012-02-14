@@ -1,0 +1,148 @@
+--- 
+nb: 
+  plugins: 
+    profile_organizations: 
+      title: Profile Organizations
+    profile_departments: 
+      title: Profile Departments
+    profile_titles: 
+      title: Profile Titles
+    profile_affiliations: 
+      title: Profile Affiliations
+    profile_urls: 
+      title: Profile Urls
+    profile_emails: 
+      title: Profile Emails
+    profile_phones: 
+      title: Profile Phones
+    profiles: 
+      title: Profiles
+  admin: 
+    profile_organizations: 
+      actions: 
+        create_new: Lag en ny Profile Organization
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Profile Organizations"
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Profile Organizations"
+      records: 
+        title: Profile Organizations
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: "Det er ingen Profile Organizations enda. Klikk p\xC3\xA5 \"Lag en ny Profile Organization\" for \xC3\xA5 legge til din f\xC3\xB8rste profile organization."
+      profile_organization: 
+        view_live_html: "Vis hvordan denne profile organization ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+        edit: Rediger denne profile organization
+        delete: Fjern denne profile organization permanent
+    profile_departments: 
+      actions: 
+        create_new: Lag en ny Profile Department
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Profile Departments"
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Profile Departments"
+      records: 
+        title: Profile Departments
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: "Det er ingen Profile Departments enda. Klikk p\xC3\xA5 \"Lag en ny Profile Department\" for \xC3\xA5 legge til din f\xC3\xB8rste profile department."
+      profile_department: 
+        view_live_html: "Vis hvordan denne profile department ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+        edit: Rediger denne profile department
+        delete: Fjern denne profile department permanent
+    profile_titles: 
+      actions: 
+        create_new: Lag en ny Profile Title
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Profile Titles"
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Profile Titles"
+      records: 
+        title: Profile Titles
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: "Det er ingen Profile Titles enda. Klikk p\xC3\xA5 \"Lag en ny Profile Title\" for \xC3\xA5 legge til din f\xC3\xB8rste profile title."
+      profile_title: 
+        view_live_html: "Vis hvordan denne profile title ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+        edit: Rediger denne profile title
+        delete: Fjern denne profile title permanent
+    profile_affiliations: 
+      actions: 
+        create_new: Lag en ny Profile Affiliation
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Profile Affiliations"
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Profile Affiliations"
+      records: 
+        title: Profile Affiliations
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: "Det er ingen Profile Affiliations enda. Klikk p\xC3\xA5 \"Lag en ny Profile Affiliation\" for \xC3\xA5 legge til din f\xC3\xB8rste profile affiliation."
+      profile_affiliation: 
+        view_live_html: "Vis hvordan denne profile affiliation ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+        edit: Rediger denne profile affiliation
+        delete: Fjern denne profile affiliation permanent
+    profile_urls: 
+      actions: 
+        create_new: Lag en ny Profile Url
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Profile Urls"
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Profile Urls"
+      records: 
+        title: Profile Urls
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: "Det er ingen Profile Urls enda. Klikk p\xC3\xA5 \"Lag en ny Profile Url\" for \xC3\xA5 legge til din f\xC3\xB8rste profile url."
+      profile_url: 
+        view_live_html: "Vis hvordan denne profile url ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+        edit: Rediger denne profile url
+        delete: Fjern denne profile url permanent
+    profile_emails: 
+      actions: 
+        create_new: Lag en ny Profile Email
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Profile Emails"
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Profile Emails"
+      records: 
+        title: Profile Emails
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: "Det er ingen Profile Emails enda. Klikk p\xC3\xA5 \"Lag en ny Profile Email\" for \xC3\xA5 legge til din f\xC3\xB8rste profile email."
+      profile_email: 
+        view_live_html: "Vis hvordan denne profile email ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+        edit: Rediger denne profile email
+        delete: Fjern denne profile email permanent
+    profile_phones: 
+      actions: 
+        create_new: Lag en ny Profile Phone
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Profile Phones"
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Profile Phones"
+      records: 
+        title: Profile Phones
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: "Det er ingen Profile Phones enda. Klikk p\xC3\xA5 \"Lag en ny Profile Phone\" for \xC3\xA5 legge til din f\xC3\xB8rste profile phone."
+      profile_phone: 
+        view_live_html: "Vis hvordan denne profile phone ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+        edit: Rediger denne profile phone
+        delete: Fjern denne profile phone permanent
+    profiles: 
+      actions: 
+        create_new: Lag en ny Profile
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Profiles"
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Profiles"
+      records: 
+        title: Profiles
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: "Det er ingen Profiles enda. Klikk p\xC3\xA5 \"Lag en ny Profile\" for \xC3\xA5 legge til din f\xC3\xB8rste profile."
+      profile: 
+        view_live_html: "Vis hvordan denne profile ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+        edit: Rediger denne profile
+        delete: Fjern denne profile permanent
+  profile_organizations: 
+    show: 
+      other: Andre Profile Organizations
+  profile_departments: 
+    show: 
+      other: Andre Profile Departments
+  profile_titles: 
+    show: 
+      other: Andre Profile Titles
+  profile_affiliations: 
+    show: 
+      other: Andre Profile Affiliations
+  profile_urls: 
+    show: 
+      other: Andre Profile Urls
+  profile_emails: 
+    show: 
+      other: Andre Profile Emails
+  profile_phones: 
+    show: 
+      other: Andre Profile Phones
+  profiles: 
+    show: 
+      other: Andre Profiles

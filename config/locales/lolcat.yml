@@ -1,0 +1,152 @@
+--- 
+lolcat: 
+  shared: 
+    admin: 
+      image_picker: 
+        image: IMAGE
+  plugins: 
+    profile_organizations: 
+      title: Profile Organizations
+    profile_departments: 
+      title: Profile Departments
+    profile_titles: 
+      title: Profile Titles
+    profile_affiliations: 
+      title: Profile Affiliations
+    profile_urls: 
+      title: Profile Urls
+    profile_emails: 
+      title: Profile Emails
+    profile_phones: 
+      title: Profile Phones
+    profiles: 
+      title: Profiles
+  admin: 
+    profile_organizations: 
+      actions: 
+        create_new: CREATE NEW Profile Organization
+        reorder: REORDR Profile Organizations
+        reorder_done: DUN REORDERIN Profile Organizations
+      records: 
+        title: Profile Organizations
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Profile Organizations YET. CLICK "CREATE NEW Profile Organization" 2 ADD UR FURST profile organization.
+      profile_organization: 
+        view_live_html: VIEW DIS profile organization LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS profile organization
+        delete: REMOOV DIS profile organization FOREVR
+    profile_departments: 
+      actions: 
+        create_new: CREATE NEW Profile Department
+        reorder: REORDR Profile Departments
+        reorder_done: DUN REORDERIN Profile Departments
+      records: 
+        title: Profile Departments
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Profile Departments YET. CLICK "CREATE NEW Profile Department" 2 ADD UR FURST profile department.
+      profile_department: 
+        view_live_html: VIEW DIS profile department LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS profile department
+        delete: REMOOV DIS profile department FOREVR
+    profile_titles: 
+      actions: 
+        create_new: CREATE NEW Profile Title
+        reorder: REORDR Profile Titles
+        reorder_done: DUN REORDERIN Profile Titles
+      records: 
+        title: Profile Titles
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Profile Titles YET. CLICK "CREATE NEW Profile Title" 2 ADD UR FURST profile title.
+      profile_title: 
+        view_live_html: VIEW DIS profile title LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS profile title
+        delete: REMOOV DIS profile title FOREVR
+    profile_affiliations: 
+      actions: 
+        create_new: CREATE NEW Profile Affiliation
+        reorder: REORDR Profile Affiliations
+        reorder_done: DUN REORDERIN Profile Affiliations
+      records: 
+        title: Profile Affiliations
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Profile Affiliations YET. CLICK "CREATE NEW Profile Affiliation" 2 ADD UR FURST profile affiliation.
+      profile_affiliation: 
+        view_live_html: VIEW DIS profile affiliation LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS profile affiliation
+        delete: REMOOV DIS profile affiliation FOREVR
+    profile_urls: 
+      actions: 
+        create_new: CREATE NEW Profile Url
+        reorder: REORDR Profile Urls
+        reorder_done: DUN REORDERIN Profile Urls
+      records: 
+        title: Profile Urls
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Profile Urls YET. CLICK "CREATE NEW Profile Url" 2 ADD UR FURST profile url.
+      profile_url: 
+        view_live_html: VIEW DIS profile url LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS profile url
+        delete: REMOOV DIS profile url FOREVR
+    profile_emails: 
+      actions: 
+        create_new: CREATE NEW Profile Email
+        reorder: REORDR Profile Emails
+        reorder_done: DUN REORDERIN Profile Emails
+      records: 
+        title: Profile Emails
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Profile Emails YET. CLICK "CREATE NEW Profile Email" 2 ADD UR FURST profile email.
+      profile_email: 
+        view_live_html: VIEW DIS profile email LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS profile email
+        delete: REMOOV DIS profile email FOREVR
+    profile_phones: 
+      actions: 
+        create_new: CREATE NEW Profile Phone
+        reorder: REORDR Profile Phones
+        reorder_done: DUN REORDERIN Profile Phones
+      records: 
+        title: Profile Phones
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Profile Phones YET. CLICK "CREATE NEW Profile Phone" 2 ADD UR FURST profile phone.
+      profile_phone: 
+        view_live_html: VIEW DIS profile phone LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS profile phone
+        delete: REMOOV DIS profile phone FOREVR
+    profiles: 
+      actions: 
+        create_new: CREATE NEW Profile
+        reorder: REORDR Profiles
+        reorder_done: DUN REORDERIN Profiles
+      records: 
+        title: Profiles
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Profiles YET. CLICK "CREATE NEW Profile" 2 ADD UR FURST profile.
+      profile: 
+        view_live_html: VIEW DIS profile LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS profile
+        delete: REMOOV DIS profile FOREVR
+  profile_organizations: 
+    show: 
+      other: OTHR Profile Organizations
+  profile_departments: 
+    show: 
+      other: OTHR Profile Departments
+  profile_titles: 
+    show: 
+      other: OTHR Profile Titles
+  profile_affiliations: 
+    show: 
+      other: OTHR Profile Affiliations
+  profile_urls: 
+    show: 
+      other: OTHR Profile Urls
+  profile_emails: 
+    show: 
+      other: OTHR Profile Emails
+  profile_phones: 
+    show: 
+      other: OTHR Profile Phones
+  profiles: 
+    show: 
+      other: OTHR Profiles

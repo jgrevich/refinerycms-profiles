@@ -1,0 +1,22 @@
+<% content_for :body_content_left do %>
+  <div id='profile'>
+    <h2><%= @profile.name %></h2>
+    <%= render :partial => 'affiliations', :locals => {:affiliations => @profile.affiliations}%>
+
+    <%= image_fu @profile.photo, "360x480#c" %>
+    
+    <section class='contact_info'>
+      <p>Email <span><%= mail_to @profile.email %></span></p>
+      <p>Phone <span><%= phormat @profile.phone %></span></p>
+      <% if @profile.url -%><p>URL <span><%= link_to @profile.url, @profile.url.content %></span></p><% end -%>
+    </section>
+    <section class='bio'>
+      <h3>Bio</h3>
+      <p>
+        <%=raw @profile.bio %>
+      </p>
+    </section>
+  </div>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
