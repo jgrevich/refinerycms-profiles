@@ -3,23 +3,24 @@
 </section>
 <aside id='actions'>
   <ul>
-    <% if Admin::ProfileCategoriesController.searchable? %>
+    <% if Admin::AnnouncementsController.searchable? %>
       <li>
         <%= render :partial => "/shared/admin/search",
                     :locals => {
-                      :url => admin_profile_categories_url
+                      :url => admin_announcements_url
                     } %>
       </li>
     <% end %>
     <li>
-      <%= link_to t('.create_new'), new_admin_profile_category_url,
+      <%= link_to t('.create_new'), new_admin_announcement_url,
                    :class => "add_icon" %>
     </li>
+
     <li>
-      <%= link_to t('.manage_profiles'), admin_profiles_url,
+      <%= link_to t('.manage_categories'), admin_announcement_categories_url,
                    :class => "edit_icon" %>
     </li>
-  </ul>
+  </ul>  
 </aside>
 <%= render :partial => '/shared/admin/make_sortable',
             :locals => {
