@@ -19,10 +19,13 @@ module Refinery
         Refinery::Plugin.register do |plugin|
           plugin.name = "profiles"
           plugin.pathname = root
-          plugin.activity = {
+          plugin.activity = [{
             :class => Profile,
             :title => 'first_name'
-          }
+          }, {
+              :class => ProfileCategory
+            }]
+          plugin.menu_match = /^(admin|refinery)\/(profile(_categorie)?s)/
         end
       end
     end

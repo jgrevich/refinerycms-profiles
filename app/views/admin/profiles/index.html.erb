@@ -2,7 +2,24 @@
   <%= render :partial => 'records' %>
 </section>
 <aside id='actions'>
-  <%= render :partial => 'actions' %>
+  <ul>
+    <% if Admin::ProfileCategoriesController.searchable? %>
+      <li>
+        <%= render :partial => "/shared/admin/search",
+                    :locals => {
+                      :url => admin_profile_categories_url
+                    } %>
+      </li>
+    <% end %>
+    <li>
+      <%= link_to t('.create_new'), new_admin_profile_category_url,
+                   :class => "add_icon" %>
+    </li>
+    <li>
+      <%= link_to t('.manage_profiles'), admin_profiles_url,
+                   :class => "edit_icon" %>
+    </li>
+  </ul>
 </aside>
 <%= render :partial => '/shared/admin/make_sortable',
             :locals => {
