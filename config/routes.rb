@@ -1,7 +1,7 @@
 ::Refinery::Application.routes.draw do
   resources :profiles, :only => [:index, :show]
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
-    resources :profile do
+    resources :profiles, :except => :show do
       collection do
         post :update_positions
         get 'category/:id' => 'profile_categories#show', :as => 'category'
@@ -13,7 +13,18 @@
     resources :profiles, :except => :show
     resources :profile_categories, :except => :show
   end
-  
+
+  resources :profiles do
+    collection do
+      get 'category/:id' => 'profile_categories#show', :as => 'category'
+    end
+  end
+
+  scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
+    resources :profiles, :except => :show
+    resources :profile_categories, :except => :show
+  end
+    
   resources :profile_emails, :only => [:index, :show]
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     resources :profile_emails, :except => :show do
