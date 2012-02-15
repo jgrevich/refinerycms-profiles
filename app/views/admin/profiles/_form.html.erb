@@ -33,6 +33,25 @@
       <div class='field'>
         <%= f.select :suffix, ("<option value='' disabled='disabled'>Suffix</option>" + options_for_select(%w{I II III IV V}))-%>
       </div>
+      
+      
+      <% if @profile_categories.any? -%>
+         <div class='field'>
+           <h2>Categories</h2>
+           <ul class="check_box_list">
+             <% @profile_categories.each do |category| -%>
+               <li>
+                 <%= check_box_tag 'profile[category_ids][]', category.id,
+                                    @profile.categories.include?(category),
+                                   :id => (id="profile_category_ids_#{category.id}") %>
+                 <%= label_tag 'profile[category_ids][]', category.name,
+                               :class => 'stripped',
+                               :for => id %>
+               </li>
+             <% end -%>
+           </ul>
+         </div>
+       <% end -%>
     </div>
   </div>
   
