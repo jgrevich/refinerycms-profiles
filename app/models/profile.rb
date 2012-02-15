@@ -9,6 +9,11 @@ class Profile < ActiveRecord::Base
   
   
   belongs_to :photo, :class_name => 'Image', :dependent => :destroy
+  has_friendly_id :name, :use_slug => true,
+                    :default_locale => (::Refinery::I18n.default_frontend_locale rescue :en),
+                    :approximate_ascii => RefinerySetting.find_or_set(:approximate_ascii, false, :scoping => 'profile'),
+                    :strip_non_ascii => RefinerySetting.find_or_set(:strip_non_ascii, false, :scoping => 'profile')
+  
   has_many :affiliations, :class_name => "ProfileAffiliation"
   has_many :emails, :as => :emailable, :class_name => "ProfileEmail"
   has_many :phones, :as => :phonable, :class_name => "ProfilePhone"
