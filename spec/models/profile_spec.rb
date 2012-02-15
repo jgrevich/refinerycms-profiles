@@ -5,7 +5,8 @@ describe Profile do
   def reset_profile(options = {})
     @valid_attributes = {
       :id => 1,
-      :first_name => "RSpec is great for testing too"
+      :first_name => "Just",
+      :last_name => "Testing"
     }
 
     @profile.destroy! if @profile
@@ -22,9 +23,13 @@ describe Profile do
       Profile.new(@valid_attributes.merge(:first_name => "")).should_not be_valid
     end
 
-    it "rejects non unique first_name" do
+    it "rejects empty last_name" do
+      Profile.new(@valid_attributes.merge(:last_name => "")).should_not be_valid
+    end
+
+    it "accepts first_name and last_name" do
       # as one gets created before each spec by reset_profile
-      Profile.new(@valid_attributes).should_not be_valid
+      Profile.new(@valid_attributes).should be_valid
     end
     
   end
