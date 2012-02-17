@@ -1,4 +1,14 @@
 module ProfilesHelper
+  
+  def phormat(number)
+    if number
+      n = number.to_s
+      "#{n[0..2]}.#{n[3..5]}.#{n[6..9]}"
+    else
+      ''
+    end
+  end
+  
   def link_to_remove_fields(name, f)
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
   end
