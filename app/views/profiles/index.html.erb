@@ -35,7 +35,7 @@
     			<td class='email'>
     			  <%=mail_to profile.email %><br />
     			</td>
-    			<td class='affiliations'><%= truncate(profile.affiliations.first.title.to_s, :length => 40) %></td>
+    			<td class='affiliations'><%= truncate(profile.affiliations.first.title.to_s, :length => 40) if profile.affiliations.first%></td>
           </tr>
         <% end %>
         </tbody>
