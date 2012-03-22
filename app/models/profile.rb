@@ -17,11 +17,12 @@ class Profile < ActiveRecord::Base
   has_many :affiliations, :class_name => "ProfileAffiliation"
   has_many :categories, :through => :profile_categorizations, :source => :profile_category
   has_many :emails, :as => :emailable, :class_name => "ProfileEmail"
+  has_many :locations, :as => :locatable, :class_name => "ProfileLocation"
   has_many :phones, :as => :phonable, :class_name => "ProfilePhone"
   has_many :profile_categorizations
   has_many :urls, :as => :urlable, :class_name => "ProfileUrl"
   
-  accepts_nested_attributes_for :affiliations, :emails, :phones, :urls
+  accepts_nested_attributes_for :affiliations, :emails, :locations, :phones, :urls
   validates_associated :emails, :phones
   
   def name

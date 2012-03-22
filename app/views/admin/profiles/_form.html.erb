@@ -56,6 +56,21 @@
   </div>
   
   <div id="contact_info">
+    <div id="locations">
+      <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+        <ul id='page_parts'>
+          <li class='ui-state-default<%= ' ui-state-active' if true %>'><%= link_to "Locations", "#locations" %></li>
+          <li class='ui-state-default'><%= link_to_add_fields "add location", f, :locations %></li>
+        </ul>
+      </div>
+
+      <div class="wym_box wym_box_0 wym_skin_refinery" style="width:280px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+        <%= f.fields_for :locations do |builder| -%>
+          <%= render "location_fields", :f => builder %>
+        <% end -%>
+      </div>
+    </div>
+
     <div id="phones">
       <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
         <ul id='page_parts'>
