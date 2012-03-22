@@ -25,7 +25,9 @@ class Profile < ActiveRecord::Base
   validates_associated :emails, :phones
   
   def name
-    self.first_name + ' ' + self.last_name
+    @name = self.first_name
+    @name += " #{self.middle_name}" if !self.middle_name.blank?
+    @name += " #{self.last_name}"
   end
   
   def email
