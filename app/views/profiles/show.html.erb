@@ -11,7 +11,7 @@
       <% if @profile.url -%><p>URL <span><%= link_to @profile.url, @profile.url.content %></span></p><% end -%>
     </section>
     <section class='bio'>
-      <h3>Bio</h3>
+      <%= content_tag :h3, "Bio" if !@profile.bio.blank? %>
       <p>
         <%=raw @profile.bio %>
       </p>
