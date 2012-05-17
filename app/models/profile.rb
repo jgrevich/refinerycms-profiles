@@ -41,5 +41,27 @@ class Profile < ActiveRecord::Base
   
   def url
     self.urls.first
-  end 
+  end
+  
+  def next
+    self.class.next(self).first
+  end
+
+  def prev
+    self.class.previous(self).first
+  end
+
+  class << self
+    def next(item)
+      self.send(:with_exclusive_scope) do
+        where("last_name > ?", item.last_name).order("last_name ASC")
+      end
+    end
+
+    def previous(item)
+      where("last_name < ?", item.last_name)
+    end
+
+  end
+  
 end

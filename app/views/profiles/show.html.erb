@@ -17,6 +17,34 @@
       </p>
     </section>
   </div>
+  
+	<nav id="prevnext_nav">
+		<% if @profile.prev.present? -%>
+		<%= link_to profile_path(@profile.prev), :class => "prev button" do -%>
+				<h3>Previous</h3>
+				<h4><%= @profile.prev.name %></h4>
+			<% end -%>
+		<% else -%>
+			<span class="prev disabled">
+				<h3>Previous</h3>
+				<h4>&nbsp;</h4>
+			</span>
+		<% end -%>
+	
+		
+		<% if @profile.next.present? -%>
+		<%= link_to profile_path(@profile.next), :class => "next button" do -%>
+				<h3>Next</h3>
+				<h4><%= @profile.next.name %></h4>
+			<% end -%>
+		<% else -%>
+			<span class="next disabled">
+				<h3>Next</h3>
+				<h4>&nbsp;</h4>
+			</span>
+		<% end -%>
+	</nav><!--#event_nav-->
+  
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
