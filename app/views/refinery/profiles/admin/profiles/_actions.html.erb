@@ -1,0 +1,22 @@
+<nav id='actions' class='multilist'>
+  <ul class='search_list'>
+    <li class='not_a_link'>
+      <%= render "/refinery/admin/search", :url => refinery.profiles_admin_profiles_path %>
+    </li>
+  </ul>
+
+  <ul class='collapsible_menu'>
+    <li class='not_a_link'>
+      <%= link_to t('.posts.title'), '#',
+                   :class => 'page_copy_icon' %>
+    </li>
+    <li>
+      <%= link_to t('.posts.manage'), refinery.profiles_admin_profiles_path,
+                   :class => 'page_icon' %>
+    </li>
+    <li>
+       <%= link_to t('.posts.new'), refinery.new_profiles_admin_profile_path,
+                   :class => 'page_add_icon' %>
+    </li>
+  </ul>
+</nav>

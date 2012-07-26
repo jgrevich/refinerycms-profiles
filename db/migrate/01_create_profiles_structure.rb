@@ -1,7 +1,10 @@
 class CreateProfilesStructure < ActiveRecord::Migration
 
+
   def self.up
-    create_table :profiles do |t|
+
+    ## profiles
+    create_table Refinery::Profiles::Profile.table_name, :id => true do |t|
       t.string :prefix
       t.string :first_name
       t.string :middle_name
@@ -9,52 +12,15 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.string :suffix
       t.text :bio
       t.integer :photo_id
+      t.string :cached_slug
       t.integer :position
-
       t.timestamps
     end
+  
+    add_index Refinery::Profiles::Profile.table_name, :id
 
-    add_index :profiles, :id
-
-    load(Rails.root.join('db', 'seeds', 'profiles.rb'))
-
-    create_table :profile_emails do |t|
-      t.string :content
-      t.string :label
-      t.boolean :primary
-      t.integer :position
-      t.references :emailable, :polymorphic => true
-      
-      t.timestamps
-    end
-
-    add_index :profile_emails, :id
-    
-    create_table :profile_phones do |t|
-      t.string :number
-      t.string :label
-      t.boolean :primary
-      t.integer :position
-      t.references :phonable, :polymorphic => true
-
-      t.timestamps
-    end
-
-    add_index :profile_phones, :id
-
-    create_table :profile_urls do |t|
-      t.string :content
-      t.string :label
-      t.boolean :primary
-      t.integer :position
-      t.references :urlable, :polymorphic => true
-
-      t.timestamps
-    end
-
-    add_index :profile_urls, :id
-    
-    create_table :profile_affiliations do |t|
+    ## affiliations
+    create_table Refinery::Profiles::Affiliation.table_name, :id => true do |t|
       t.integer :department_id
       t.integer :organization_id
       t.integer :profile_id
@@ -65,70 +31,139 @@ class CreateProfilesStructure < ActiveRecord::Migration
 
       t.timestamps
     end
+    
+    add_index Refinery::Profiles::Affiliation.table_name, [:id, :department_id, :profile_id, :title_id]
 
-    add_index :profile_affiliations, :id
-    add_index :profile_affiliations, :department_id
-    add_index :profile_affiliations, :profile_id
-    add_index :profile_affiliations, :title_id
-  
-    create_table :profile_titles do |t|
+    ## categories
+    create_table Refinery::Profiles::Category.table_name, :id => true do |t|
+      t.string :name
+      t.integer :position
+
+      t.timestamps
+    end
+    
+    add_index Refinery::Profiles::Category.table_name, :id
+    
+    create_table Refinery::Profiles::Categorization.table_name, :id => true do |t|
+      t.integer :category_id
+      t.integer :profile_id
+    end
+    
+    add_index Refinery::Profiles::Categorization.table_name, [:id, :category_id, :profile_id ]
+    
+    ## departments
+    create_table Refinery::Profiles::Department.table_name, :id => true do |t|
       t.string :name
       t.integer :position
 
       t.timestamps
     end
 
-    add_index :profile_titles, :id
-  
-    create_table :departments_titles, :id => false do |t|
+    add_index Refinery::Profiles::Department.table_name, :id
+
+    create_table :refinery_profiles_departments_organizations, :id => false do |t|
+      t.integer :department_id
+      t.integer :organization_id
+    end
+
+    add_index :refinery_profiles_departments_organizations, [:department_id, :organization_id]
+
+    create_table :refinery_profiles_departments_titles, :id => false do |t|
       t.integer :profile_department_id
       t.integer :profile_title_id
     end
+
+    add_index :refinery_profiles_departments_titles, [:department_id, :title_id]
+
+    ## emails
+    create_table Refinery::Profiles::Email.table_name, :id => true do |t|
+      t.string :content
+      t.string :label
+      t.boolean :primary
+      t.integer :position
+      t.references :emailable, :polymorphic => true
+      
+      t.timestamps
+    end
+
+    add_index Refinery::Profiles::Email.table_name, :id
+
+    ## organizations
+    create_table Refinery::Profiles::Location.table_name, :id => true do |t|
+      t.string :building_name
+      t.string :building_acronym
+      t.integer :mail_code
+      t.string :room_number
+      
+      t.integer :position
+      t.references :locatable, :polymorphic => true
+
+      t.timestamps
+    end
     
-    create_table :profile_departments do |t|
+    add_index Refinery::Profiles::Location.table_name, :id
+
+    ## organizations
+    create_table Refinery::Profiles::Organization.table_name, :id => true do |t|
       t.string :name
       t.integer :position
 
       t.timestamps
     end
+    
+    add_index Refinery::Profiles::Organization.table_name, :id
 
-    add_index :profile_departments, :id
+    ## phones
+    create_table Refinery::Profiles::Phone.table_name, :id => true do |t|
+      t.string :number
+      t.string :label
+      t.boolean :primary
+      t.integer :position
+      t.references :phonable, :polymorphic => true
 
-    create_table :departments_organizations, :id => false do |t|
-      t.integer :profile_department_id
-      t.integer :profile_organization_id
+      t.timestamps
     end
-  
-    create_table :profile_organizations do |t|
+    
+    add_index Refinery::Profiles::Phone.table_name, :id
+    
+    ## titles
+    create_table Refinery::Profiles::Title.table_name, :id => true do |t|
       t.string :name
       t.integer :position
 
       t.timestamps
     end
+    
+    add_index Refinery::Profiles::Title.table_name, :id
+    
+    ## URLs
+    create_table Refinery::Profiles::Url.table_name, :id => true do |t|
+      t.string :name
+      t.integer :position
 
-    add_index :profile_organizations, :id
+      t.timestamps
+    end
+    
+    add_index Refinery::Profiles::Url.table_name, :id
+    
   end
 
 
   def self.down
-    if defined?(UserPlugin)
-      UserPlugin.destroy_all({:name => "profiles"})
-    end
+    Refinery::UserPlugin.destroy_all({:name => "refinerycms_profiles"})
+    Refinery::Page.delete_all({:link_url => "/profiles"})
 
-    if defined?(Page)
-      Page.delete_all({:link_url => "/profiles"})
-    end
-
-    drop_table :profiles
-    drop_table :profile_emails
-    drop_table :profile_phones
-    drop_table :profile_urls
-    drop_table :profile_affiliations
-    drop_table :profile_titles
-    drop_table :departments_titles
-    drop_table :profile_departments
-    drop_table :departments_organizations
-    drop_table :profile_organizations
+    drop_table Refinery::Profiles::Profile.table_name
+    drop_table Refinery::Profiles::Affiliation.table_name
+    drop_table Refinery::Profiles::Department.table_name
+    drop_table Refinery::Profiles::Email.table_name
+    drop_table Refinery::Profiles::Phone.table_name
+    drop_table Refinery::Profiles::Location.table_name
+    drop_table Refinery::Profiles::Organization.table_name
+    drop_table Refinery::Profiles::Title.table_name
+    drop_table Refinery::Profiles::Url.table_name
+    drop_table :refinery_profiles_departments_organizations
+    drop_table :refinery_profiles_departments_titles
   end
 
 end

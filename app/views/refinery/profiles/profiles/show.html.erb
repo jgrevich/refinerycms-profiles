@@ -1,0 +1,50 @@
+<% content_for :body do %>
+  <div id='profile'>
+    <h2><%= @profile.name %></h2>
+    <%= render :partial => 'affiliations', :locals => {:affiliations => @profile.affiliations}%>
+
+    <%= image_fu @profile.photo, "360x480#c" %>
+    
+    <section class='contact_info'>
+      <p>Email <span><%= mail_to @profile.email %></span></p>
+      <p>Phone <span><%= phormat @profile.phone %></span></p>
+      <% if @profile.url -%><p>URL <span><%= link_to @profile.url, @profile.url.content %></span></p><% end -%>
+    </section>
+    <section class='bio'>
+      <%= content_tag :h3, "Bio" if !@profile.bio.blank? %>
+      <p>
+        <%=raw @profile.bio %>
+      </p>
+    </section>
+  </div>
+  
+	<nav id="prevnext_nav">
+		<% if @profile.prev.present? -%>
+		<%= link_to profile_path(@profile.prev), :class => "prev button" do -%>
+				<h3>Previous</h3>
+				<h4><%= @profile.prev.name %></h4>
+			<% end -%>
+		<% else -%>
+			<span class="prev disabled">
+				<h3>Previous</h3>
+				<h4>&nbsp;</h4>
+			</span>
+		<% end -%>
+	
+		
+		<% if @profile.next.present? -%>
+		<%= link_to profile_path(@profile.next), :class => "next button" do -%>
+				<h3>Next</h3>
+				<h4><%= @profile.next.name %></h4>
+			<% end -%>
+		<% else -%>
+			<span class="next disabled">
+				<h3>Next</h3>
+				<h4>&nbsp;</h4>
+			</span>
+		<% end -%>
+	</nav><!--#event_nav-->
+  
+<% end %>
+
+<%= render "/refinery/content_page" %>
