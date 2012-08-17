@@ -1,0 +1,12 @@
+<% content_for :body_content_left do %>
+  <div id='profile'>
+    <h2>Check your email</h2>
+    <p>We just sent a link to the email address you provided.</p>
+    <% form_tag tform_path do %>
+        <%= text_field_tag :email, nil,  :placeholder => :email %>
+        <%= submit_tag "Update Profile" %>
+    <% end %>
+</div>  
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

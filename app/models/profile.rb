@@ -1,4 +1,5 @@
 class Profile < ActiveRecord::Base
+  extend Devise::Models
 
   acts_as_indexed :fields => [:first_name, :middle_name, :last_name, :bio]
   alias_attribute :title, :name
@@ -24,6 +25,8 @@ class Profile < ActiveRecord::Base
   
   accepts_nested_attributes_for :affiliations, :emails, :locations, :phones, :urls
   validates_associated :emails, :phones
+  
+  before_create :generate_token
   
   def name
     @name = self.first_name
@@ -51,6 +54,13 @@ class Profile < ActiveRecord::Base
     self.class.previous(self).first
   end
 
+  protected
+  
+  def generate_token
+    self.token = Profile.friendly_token
+    self.token_created_at = Time.now
+  end
+    
   class << self
     def next(item)
       self.send(:with_exclusive_scope) do
@@ -61,7 +71,12 @@ class Profile < ActiveRecord::Base
     def previous(item)
       where("last_name < ?", item.last_name)
     end
-
+    
+    def friendly_token
+      SecureRandom.base64(25).tr('+/=lIO0', 'pqrsxyz')
+    end
   end
+  
+
   
 end

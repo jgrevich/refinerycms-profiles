@@ -1,0 +1,15 @@
+<% content_for :body_content_left do %>
+  <div id='profile'>
+    <h2>Update Profile Data</h2>
+    <p>Please enter your email address in the form below.  You will be sent an email containing a time-sensitive link to edit your profile data.</p>
+    <%= content_tag :section, flash[:error], :class => :error if flash[:error] %>
+    <%= content_tag :section, flash[:success], :class => :success if flash[:success] %>
+    
+    <% form_tag tform_path do %>
+        <%= text_field_tag :email, nil,  :placeholder => :email %>
+        <%= submit_tag "Update Profile" %>
+    <% end %>
+</div>  
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
