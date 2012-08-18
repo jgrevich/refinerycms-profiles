@@ -1,5 +1,5 @@
 <div class='field'>
     <%= f.telephone_field :number, :placeholder => '(###) ###-####' %>
     <%= f.hidden_field :_destroy %>
-    <%= link_to_function "remove", "remove_fields(this) "%>
+    <%= link_to_function refinery_icon_tag('delete.png'), "remove_fields(this) " %>
 </div>
