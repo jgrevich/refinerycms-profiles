@@ -1,4 +1,3 @@
-<%= form_for @profile do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
           :object => @profile,
           :include_object_name => true
@@ -132,6 +131,24 @@
     </div>
   </div>
   
+  
+  
+  <div id="keywords">
+      <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+          <ul id='page_parts'>
+            <li class='ui-state-default<%= ' ui-state-active' if true %>'>
+              <%= link_to "Keywords", "#keywords" %>
+            </li>
+          </ul>
+
+      </div>
+
+
+      <div class="wym_box wym_box_0 wym_skin_refinery">
+        <%= f.text_field :keyword_list, :value => @profile.keyword_list.to_s, :placeholder => "Comma separated keywords that describe your research", :size => 144 -%>
+      </div>
+  </div>
+  
   <div id="affiliations">
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
@@ -145,7 +162,7 @@
     
     <div class="wym_box wym_box_0 wym_skin_refinery" style="width: 948px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
       <%= f.fields_for :affiliations do |builder| -%>
-        <%= render "admin/profiles/affiliation_fields", :f => builder %>
+        <%= render "affiliation_fields", :f => builder %>
       <% end -%>
     </div>
     
@@ -179,15 +196,3 @@
                 :delete_title => t('delete', :scope => 'admin.profiles.profile'),
                 :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @profile.first_name)
               } %>
-<% end -%>
-<% content_for :javascripts do %>
-  <script>
-    $(document).ready(function(){
-      page_options.init(false, '', '');
-    });
-  </script>
-  <%= javascript_include_tag('refinery/refinerycms-profiles') %>
-  <%= javascript_include_tag('autocomplete-rails') %>
-<% end %>
-
-<% content_for :stylesheets, stylesheet_link_tag('refinery/refinerycms-profiles')%>

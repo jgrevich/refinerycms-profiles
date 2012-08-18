@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
   extend Devise::Models
-
+  acts_as_taggable_on :keywords
   acts_as_indexed :fields => [:first_name, :middle_name, :last_name, :bio]
   alias_attribute :title, :name
   default_scope :order => 'last_name ASC'
