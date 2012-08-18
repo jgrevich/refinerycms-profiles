@@ -10,20 +10,22 @@ class Profile < ActiveRecord::Base
   
   
   belongs_to :photo, :class_name => 'Image', :dependent => :destroy
+  
   has_friendly_id :name, :use_slug => true,
                     :default_locale => (::Refinery::I18n.default_frontend_locale rescue :en),
                     :approximate_ascii => RefinerySetting.find_or_set(:approximate_ascii, false, :scoping => 'profile'),
                     :strip_non_ascii => RefinerySetting.find_or_set(:strip_non_ascii, false, :scoping => 'profile')
   
-  has_many :affiliations, :class_name => "ProfileAffiliation"
+  has_many :affiliations, :class_name => "ProfileAffiliation", :dependent => :destroy
   has_many :categories, :through => :profile_categorizations, :source => :profile_category
-  has_many :emails, :as => :emailable, :class_name => "ProfileEmail"
-  has_many :locations, :as => :locatable, :class_name => "ProfileLocation"
-  has_many :phones, :as => :phonable, :class_name => "ProfilePhone"
+  has_many :emails, :as => :emailable, :class_name => "ProfileEmail", :dependent => :destroy
+  has_many :locations, :as => :locatable, :class_name => "ProfileLocation", :dependent => :destroy
+  has_many :phones, :as => :phonable, :class_name => "ProfilePhone", :dependent => :destroy
   has_many :profile_categorizations
-  has_many :urls, :as => :urlable, :class_name => "ProfileUrl"
+  has_many :urls, :as => :urlable, :class_name => "ProfileUrl", :dependent => :destroy
   
-  accepts_nested_attributes_for :affiliations, :emails, :locations, :phones, :urls
+  accepts_nested_attributes_for :affiliations
+  accepts_nested_attributes_for :emails, :locations, :phones, :urls
   validates_associated :emails, :phones
   
   before_create :generate_token
