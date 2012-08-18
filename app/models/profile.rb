@@ -73,7 +73,9 @@ class Profile < ActiveRecord::Base
     end
 
     def previous(item)
-      where("last_name < ?", item.last_name)
+      self.send(:with_exclusive_scope) do
+        where("last_name < ?", item.last_name).order("last_name DESC")
+      end
     end
     
     def friendly_token
