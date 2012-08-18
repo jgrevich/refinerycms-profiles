@@ -27,6 +27,10 @@ class Profile < ActiveRecord::Base
   validates_associated :emails, :phones
   
   before_create :generate_token
+
+  def affiliation
+    self.affiliations.first
+  end
   
   def name
     @name = self.first_name

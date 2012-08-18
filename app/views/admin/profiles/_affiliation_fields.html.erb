@@ -1,7 +1,7 @@
 <div class='field'>
-    <%= f.select :organization_id, options_from_collection_for_select(ProfileOrganization.all, :id, :name, f.object.organization_id) %>
-    <%= f.select :department_id, options_from_collection_for_select(ProfileDepartment.all, :id, :name, f.object.department_id) %>
-    <%= f.select :title_id, options_from_collection_for_select(ProfileTitle.all, :id, :name, f.object.title_id) %>
+    <%= f.select :organization_id, options_from_collection_for_select(ProfileOrganization.order(:name), :id, :name, f.object.organization_id) %>
+    <%= f.select :department_id, options_from_collection_for_select(ProfileDepartment.order(:name), :id, :name, f.object.department_id) %>
+    <%= f.select :title_id, options_from_collection_for_select(ProfileTitle.order(:name), :id, :name, f.object.title_id) %>
     
     <%= link_to_function "remove", "remove_fields(this) "%>
 </div>
