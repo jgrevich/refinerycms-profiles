@@ -24,9 +24,8 @@ class Profile < ActiveRecord::Base
   has_many :profile_categorizations
   has_many :urls, :as => :urlable, :class_name => "ProfileUrl", :dependent => :destroy
   
-  accepts_nested_attributes_for :affiliations
-  accepts_nested_attributes_for :emails, :locations, :phones, :urls
-  validates_associated :emails, :phones
+  accepts_nested_attributes_for :affiliations, :emails, :locations, :phones, :urls, :allow_destroy => true
+  validates_associated :emails, :locations, :phones, :urls
   
   before_create :generate_token
 
