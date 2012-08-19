@@ -1,5 +1,6 @@
 <div class='field'>
-    <%= f.text_field :building_acronym, :placeholder => 'Building Acronym', :size => 14 %>
+    <%= f.select :label, options_for_select(%w{\  Lab Office Other }, f.object.label) %><br />
+    <%= f.text_field :building_acronym, :placeholder => 'Building Acronym', :size => 14 %><br />
     <%= f.text_field :room_number, :placeholder => 'Room Number', :size => 14 %>
 	
     <%= f.hidden_field :_destroy %>
