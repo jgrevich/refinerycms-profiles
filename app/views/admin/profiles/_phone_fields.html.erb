@@ -1,5 +1,5 @@
 <div class='field'>
-    <%= f.select :label, options_for_select(%w{\  Fax Lab Mobile Office }, f.object.label) %>
+    <%= f.select :label, options_for_select(%w{\  Fax Lab Mobile Office Work }, f.object.label) %>
     <%= f.telephone_field :number, :placeholder => '(###) ###-####', :size => 24 %>
     <%= f.hidden_field :_destroy %>
     <%= link_to_function refinery_icon_tag('delete.png'), "remove_fields(this) " %>
