@@ -33,25 +33,22 @@ class ProfilesController < ApplicationController
   end
   
   def token_edit
-    Rails.logger.info('hello edit')
     @profile = Profile.find_by_token(params[:token])
-    Rails.logger.info('hello profile?')
 
     if token_valid?
       @profile_categories = ProfileCategory.all
       render "token_edit", :layout => 'admin'
     else
+      flash[:error] = "Token is expired or does not exist."
       redirect_to token_url
     end
   end
   
   def update
-    Rails.logger.info('hello update?')
     @profile = Profile.find_by_token(params[:token])
-    Rails.logger.info('hello profile?')
     if @profile.update_attributes(params[:profile]) && token_valid?
-      @profile.update_attribute :token, nil
-      flash[:success] = "Profile updated successfully. The link to edit this profile has been expired."
+      # @profile.update_attribute :token, nil
+      flash[:success] = "Profile updated successfully." # The link to edit this profile has been expired.
       redirect_to token_url
     else
       flash[:error] = "There was an error."
@@ -72,17 +69,9 @@ protected
   
   def token_valid?
     return nil if @profile.blank?
-
-    Rails.logger.info('hello token_valid?')
     hours = (Time.now - @profile.token_created_at)/3600
     limit = 24
-    unless hours < limit
-      flash[:error] = "Your token has expired the #{limit} hour limit."
-      Rails.logger.info("Your token has expired the #{limit} hour limit.")
-      false
-    else
-      true
-    end
+    hours < limit
   end
 
 end
