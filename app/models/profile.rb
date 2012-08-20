@@ -27,8 +27,6 @@ class Profile < ActiveRecord::Base
   accepts_nested_attributes_for :affiliations, :emails, :locations, :phones, :urls, :allow_destroy => true
   validates_associated :emails, :locations, :phones, :urls
   
-  before_create :generate_token
-
   def affiliation
     self.affiliations.first
   end
@@ -64,6 +62,7 @@ class Profile < ActiveRecord::Base
   def generate_token
     self.token = Profile.friendly_token
     self.token_created_at = Time.now
+    self.save
   end
     
   class << self

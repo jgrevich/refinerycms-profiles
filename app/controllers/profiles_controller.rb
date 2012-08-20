@@ -3,8 +3,6 @@ class ProfilesController < ApplicationController
   before_filter :find_all_profiles
   before_filter :find_page
   
-  
-  
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @profile in the line below:
@@ -24,6 +22,7 @@ class ProfilesController < ApplicationController
     
     if email
       profile = email.emailable
+      profile.generate_token
       ProfileMailer.email_token(profile).deliver
       flash[:success] = "We have emailed a time-sensitive link that will allow you to update your profile. Please contact us at iem@ucsd.edu if you need assistance."
     else
@@ -34,14 +33,24 @@ class ProfilesController < ApplicationController
   end
   
   def token_edit
+    Rails.logger.info('hello edit')
     @profile = Profile.find_by_token(params[:token])
-    @profile_categories = ProfileCategory.all
-    render "token_edit", :layout => 'admin'
+    Rails.logger.info('hello profile?')
+
+    if token_valid?
+      @profile_categories = ProfileCategory.all
+      render "token_edit", :layout => 'admin'
+    else
+      redirect_to token_url
+    end
   end
   
   def update
+    Rails.logger.info('hello update?')
     @profile = Profile.find_by_token(params[:token])
-    if @profile.update_attributes(params[:profile])
+    Rails.logger.info('hello profile?')
+    if @profile.update_attributes(params[:profile]) && token_valid?
+      @profile.update_attribute :token, nil
       flash[:success] = "Profile updated successfully. The link to edit this profile has been expired."
       redirect_to token_url
     else
@@ -59,6 +68,21 @@ protected
 
   def find_page
     @page = Page.where(:link_url => "/profiles").first
+  end
+  
+  def token_valid?
+    return nil if @profile.blank?
+
+    Rails.logger.info('hello token_valid?')
+    hours = (Time.now - @profile.token_created_at)/3600
+    limit = 24
+    unless hours < limit
+      flash[:error] = "Your token has expired the #{limit} hour limit."
+      Rails.logger.info("Your token has expired the #{limit} hour limit.")
+      false
+    else
+      true
+    end
   end
 
 end
