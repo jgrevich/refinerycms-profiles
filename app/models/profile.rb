@@ -1,7 +1,7 @@
 class Profile < ActiveRecord::Base
   extend Devise::Models
   acts_as_taggable_on :keywords
-  acts_as_indexed :fields => [:first_name, :middle_name, :last_name, :bio]
+  acts_as_indexed :fields => [:first_name, :middle_name, :last_name, :bio, :keyword_list]
   alias_attribute :title, :name
   default_scope :order => 'last_name ASC'
 
@@ -39,6 +39,10 @@ class Profile < ActiveRecord::Base
   
   def email
     self.emails.first
+  end
+  
+  def location
+    self.locations.first
   end
   
   def phone
