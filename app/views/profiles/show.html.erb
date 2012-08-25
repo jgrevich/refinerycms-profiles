@@ -45,6 +45,8 @@
 		<% end -%>
 	</nav><!--#event_nav-->
   
+  <div id='update_link'><small>Is this your profile? <%= link_to "Click here to update the content.", token_url(:email => @profile.emails.first.content) %></small></div>
+  
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
