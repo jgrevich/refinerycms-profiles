@@ -6,7 +6,7 @@
     <%= content_tag :section, flash[:success], :class => :success if flash[:success] %>
     
     <% form_tag tform_path do %>
-        <%= text_field_tag :email, nil,  :placeholder => :email %>
+        <%= text_field_tag :email, nil,  :placeholder => :email, :value => params[:email] %>
         <%= submit_tag "Update Profile" %>
     <% end %>
   </div>
