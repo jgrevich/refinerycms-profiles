@@ -46,6 +46,7 @@ class ProfilesController < ApplicationController
   
   def update
     @profile = Profile.find_by_token(params[:token])
+    params[:profile][:photo] = Image.create(:image => params[:profile][:photo]) if params[:profile][:photo]
     if @profile.update_attributes(params[:profile]) && token_valid?
       # @profile.update_attribute :token, nil
       flash[:success] = "Profile updated successfully." # The link to edit this profile has been expired.

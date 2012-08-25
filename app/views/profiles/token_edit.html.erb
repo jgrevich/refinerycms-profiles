@@ -1,4 +1,4 @@
-<%= form_for @profile, :url => tupdate_path(@profile) do |f| -%>
+<%= form_for @profile, :url => tupdate_path(@profile), :html => {:multipart => true} do |f| -%>
     <%= render :partial => 'admin/profiles/profile_fields', :locals => {:f => f} %>
 <% end -%>
 <% content_for :javascripts do %>
