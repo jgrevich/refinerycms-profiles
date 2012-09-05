@@ -1,148 +1,32 @@
---- 
-nl: 
-  plugins: 
-    profile_organizations: 
-      title: Profile Organizations
-    profile_departments: 
-      title: Profile Departments
-    profile_titles: 
-      title: Profile Titles
-    profile_affiliations: 
-      title: Profile Affiliations
-    profile_urls: 
-      title: Profile Urls
-    profile_emails: 
-      title: Profile Emails
-    profile_phones: 
-      title: Profile Phones
-    profiles: 
-      title: Profiles
-  admin: 
-    profile_organizations: 
-      actions: 
-        create_new: Maak een nieuwe Profile Organization
-        reorder: Wijzig de volgorde van de Profile Organizations
-        reorder_done: Klaar met het wijzingen van de volgorde van de Profile Organizations
-      records: 
-        title: Profile Organizations
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Profile Organizations. Druk op 'Maak een nieuwe Profile Organization' om de eerste aan te maken.
-      profile_organization: 
-        view_live_html: Bekijk deze profile organization op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze profile organization
-        delete: Verwijder deze profile organization voor eeuwig
-    profile_departments: 
-      actions: 
-        create_new: Maak een nieuwe Profile Department
-        reorder: Wijzig de volgorde van de Profile Departments
-        reorder_done: Klaar met het wijzingen van de volgorde van de Profile Departments
-      records: 
-        title: Profile Departments
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Profile Departments. Druk op 'Maak een nieuwe Profile Department' om de eerste aan te maken.
-      profile_department: 
-        view_live_html: Bekijk deze profile department op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze profile department
-        delete: Verwijder deze profile department voor eeuwig
-    profile_titles: 
-      actions: 
-        create_new: Maak een nieuwe Profile Title
-        reorder: Wijzig de volgorde van de Profile Titles
-        reorder_done: Klaar met het wijzingen van de volgorde van de Profile Titles
-      records: 
-        title: Profile Titles
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Profile Titles. Druk op 'Maak een nieuwe Profile Title' om de eerste aan te maken.
-      profile_title: 
-        view_live_html: Bekijk deze profile title op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze profile title
-        delete: Verwijder deze profile title voor eeuwig
-    profile_affiliations: 
-      actions: 
-        create_new: Maak een nieuwe Profile Affiliation
-        reorder: Wijzig de volgorde van de Profile Affiliations
-        reorder_done: Klaar met het wijzingen van de volgorde van de Profile Affiliations
-      records: 
-        title: Profile Affiliations
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Profile Affiliations. Druk op 'Maak een nieuwe Profile Affiliation' om de eerste aan te maken.
-      profile_affiliation: 
-        view_live_html: Bekijk deze profile affiliation op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze profile affiliation
-        delete: Verwijder deze profile affiliation voor eeuwig
-    profile_urls: 
-      actions: 
-        create_new: Maak een nieuwe Profile Url
-        reorder: Wijzig de volgorde van de Profile Urls
-        reorder_done: Klaar met het wijzingen van de volgorde van de Profile Urls
-      records: 
-        title: Profile Urls
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Profile Urls. Druk op 'Maak een nieuwe Profile Url' om de eerste aan te maken.
-      profile_url: 
-        view_live_html: Bekijk deze profile url op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze profile url
-        delete: Verwijder deze profile url voor eeuwig
-    profile_emails: 
-      actions: 
-        create_new: Maak een nieuwe Profile Email
-        reorder: Wijzig de volgorde van de Profile Emails
-        reorder_done: Klaar met het wijzingen van de volgorde van de Profile Emails
-      records: 
-        title: Profile Emails
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Profile Emails. Druk op 'Maak een nieuwe Profile Email' om de eerste aan te maken.
-      profile_email: 
-        view_live_html: Bekijk deze profile email op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze profile email
-        delete: Verwijder deze profile email voor eeuwig
-    profile_phones: 
-      actions: 
-        create_new: Maak een nieuwe Profile Phone
-        reorder: Wijzig de volgorde van de Profile Phones
-        reorder_done: Klaar met het wijzingen van de volgorde van de Profile Phones
-      records: 
-        title: Profile Phones
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Profile Phones. Druk op 'Maak een nieuwe Profile Phone' om de eerste aan te maken.
-      profile_phone: 
-        view_live_html: Bekijk deze profile phone op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze profile phone
-        delete: Verwijder deze profile phone voor eeuwig
-    profiles: 
-      actions: 
-        create_new: Maak een nieuwe Profile
-        reorder: Wijzig de volgorde van de Profiles
-        reorder_done: Klaar met het wijzingen van de volgorde van de Profiles
-      records: 
+nl:
+  refinery:
+    plugins:
+      profiles:
         title: Profiles
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Profiles. Druk op 'Maak een nieuwe Profile' om de eerste aan te maken.
-      profile: 
-        view_live_html: Bekijk deze profile op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze profile
-        delete: Verwijder deze profile voor eeuwig
-  profile_organizations: 
-    show: 
-      other: Andere Profile Organizations
-  profile_departments: 
-    show: 
-      other: Andere Profile Departments
-  profile_titles: 
-    show: 
-      other: Andere Profile Titles
-  profile_affiliations: 
-    show: 
-      other: Andere Profile Affiliations
-  profile_urls: 
-    show: 
-      other: Andere Profile Urls
-  profile_emails: 
-    show: 
-      other: Andere Profile Emails
-  profile_phones: 
-    show: 
-      other: Andere Profile Phones
-  profiles: 
-    show: 
-      other: Andere Profiles
+    profiles:
+      admin:
+        profiles:
+          actions:
+            create_new: Maak een nieuwe Profile
+            reorder: Wijzig de volgorde van de Profiles
+            reorder_done: Klaar met het wijzingen van de volgorde van de Profiles
+          records:
+            title: Profiles
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Profiles. Druk op 'Maak een nieuwe Profile' om de eerste aan te maken.
+          profile:
+            view_live_html: Bekijk deze profile op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze profile
+            delete: Verwijder deze profile voor eeuwig
+      profiles:
+        show:
+          other: Andere Profiles
+  activerecord:
+    attributes:
+      'refinery/profiles/profile':
+        prefix: Prefix
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        suffix: Suffix
+        bio: Bio

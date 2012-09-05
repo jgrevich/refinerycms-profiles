@@ -1,152 +1,32 @@
---- 
-fr: 
-  shared: 
-    admin: 
-      image_picker: 
-        image: image
-  plugins: 
-    profile_organizations: 
-      title: Profile Organizations
-    profile_departments: 
-      title: Profile Departments
-    profile_titles: 
-      title: Profile Titles
-    profile_affiliations: 
-      title: Profile Affiliations
-    profile_urls: 
-      title: Profile Urls
-    profile_emails: 
-      title: Profile Emails
-    profile_phones: 
-      title: Profile Phones
-    profiles: 
-      title: Profiles
-  admin: 
-    profile_organizations: 
-      actions: 
-        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Organization"
-        reorder: "R\xC3\xA9ordonner les Profile Organizations"
-        reorder_done: "Fin de r\xC3\xA9ordonnancement des Profile Organizations"
-      records: 
-        title: Profile Organizations
-        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
-        no_items_yet: "Il n'y a actuellement aucun(e) Profile Organization. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Organization\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) profile organization."
-      profile_organization: 
-        view_live_html: "Voir ce(t/tte) profile organization <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
-        edit: Modifier ce(t/tte) profile organization
-        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) profile organization"
-    profile_departments: 
-      actions: 
-        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Department"
-        reorder: "R\xC3\xA9ordonner les Profile Departments"
-        reorder_done: "Fin de r\xC3\xA9ordonnancement des Profile Departments"
-      records: 
-        title: Profile Departments
-        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
-        no_items_yet: "Il n'y a actuellement aucun(e) Profile Department. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Department\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) profile department."
-      profile_department: 
-        view_live_html: "Voir ce(t/tte) profile department <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
-        edit: Modifier ce(t/tte) profile department
-        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) profile department"
-    profile_titles: 
-      actions: 
-        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Title"
-        reorder: "R\xC3\xA9ordonner les Profile Titles"
-        reorder_done: "Fin de r\xC3\xA9ordonnancement des Profile Titles"
-      records: 
-        title: Profile Titles
-        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
-        no_items_yet: "Il n'y a actuellement aucun(e) Profile Title. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Title\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) profile title."
-      profile_title: 
-        view_live_html: "Voir ce(t/tte) profile title <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
-        edit: Modifier ce(t/tte) profile title
-        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) profile title"
-    profile_affiliations: 
-      actions: 
-        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Affiliation"
-        reorder: "R\xC3\xA9ordonner les Profile Affiliations"
-        reorder_done: "Fin de r\xC3\xA9ordonnancement des Profile Affiliations"
-      records: 
-        title: Profile Affiliations
-        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
-        no_items_yet: "Il n'y a actuellement aucun(e) Profile Affiliation. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Affiliation\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) profile affiliation."
-      profile_affiliation: 
-        view_live_html: "Voir ce(t/tte) profile affiliation <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
-        edit: Modifier ce(t/tte) profile affiliation
-        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) profile affiliation"
-    profile_urls: 
-      actions: 
-        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Url"
-        reorder: "R\xC3\xA9ordonner les Profile Urls"
-        reorder_done: "Fin de r\xC3\xA9ordonnancement des Profile Urls"
-      records: 
-        title: Profile Urls
-        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
-        no_items_yet: "Il n'y a actuellement aucun(e) Profile Url. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Url\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) profile url."
-      profile_url: 
-        view_live_html: "Voir ce(t/tte) profile url <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
-        edit: Modifier ce(t/tte) profile url
-        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) profile url"
-    profile_emails: 
-      actions: 
-        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Email"
-        reorder: "R\xC3\xA9ordonner les Profile Emails"
-        reorder_done: "Fin de r\xC3\xA9ordonnancement des Profile Emails"
-      records: 
-        title: Profile Emails
-        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
-        no_items_yet: "Il n'y a actuellement aucun(e) Profile Email. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Email\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) profile email."
-      profile_email: 
-        view_live_html: "Voir ce(t/tte) profile email <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
-        edit: Modifier ce(t/tte) profile email
-        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) profile email"
-    profile_phones: 
-      actions: 
-        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Phone"
-        reorder: "R\xC3\xA9ordonner les Profile Phones"
-        reorder_done: "Fin de r\xC3\xA9ordonnancement des Profile Phones"
-      records: 
-        title: Profile Phones
-        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
-        no_items_yet: "Il n'y a actuellement aucun(e) Profile Phone. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile Phone\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) profile phone."
-      profile_phone: 
-        view_live_html: "Voir ce(t/tte) profile phone <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
-        edit: Modifier ce(t/tte) profile phone
-        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) profile phone"
-    profiles: 
-      actions: 
-        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile"
-        reorder: "R\xC3\xA9ordonner les Profiles"
-        reorder_done: "Fin de r\xC3\xA9ordonnancement des Profiles"
-      records: 
+fr:
+  refinery:
+    plugins:
+      profiles:
         title: Profiles
-        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
-        no_items_yet: "Il n'y a actuellement aucun(e) Profile. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Profile\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) profile."
-      profile: 
-        view_live_html: "Voir ce(t/tte) profile <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
-        edit: Modifier ce(t/tte) profile
-        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) profile"
-  profile_organizations: 
-    show: 
-      other: Autres Profile Organizations
-  profile_departments: 
-    show: 
-      other: Autres Profile Departments
-  profile_titles: 
-    show: 
-      other: Autres Profile Titles
-  profile_affiliations: 
-    show: 
-      other: Autres Profile Affiliations
-  profile_urls: 
-    show: 
-      other: Autres Profile Urls
-  profile_emails: 
-    show: 
-      other: Autres Profile Emails
-  profile_phones: 
-    show: 
-      other: Autres Profile Phones
-  profiles: 
-    show: 
-      other: Autres Profiles
+    profiles:
+      admin:
+        profiles:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Profile
+            reorder: Réordonner les Profiles
+            reorder_done: Fin de réordonnancement des Profiles
+          records:
+            title: Profiles
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Profile. Cliquer sur "Créer un(e) nouve(au/l/lle) Profile" pour créer votre premi(er/ère) profile.'
+          profile:
+            view_live_html: Voir ce(t/tte) profile <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) profile
+            delete: Supprimer définitivement ce(t/tte) profile
+      profiles:
+        show:
+          other: Autres Profiles
+  activerecord:
+    attributes:
+      'refinery/profiles/profile':
+        prefix: Prefix
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        suffix: Suffix
+        bio: Bio

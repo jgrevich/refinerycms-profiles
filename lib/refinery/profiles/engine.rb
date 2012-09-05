@@ -12,7 +12,8 @@ module Refinery
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.profiles_admin_profiles_path }
           plugin.pathname = root
           plugin.activity = {
-            :class_name => :'refinery/profiles/profile'
+            :class_name => :'refinery/profiles/profile',
+            :title => 'prefix'
           }
           
         end

@@ -1,7 +1,7 @@
 
 FactoryGirl.define do
   factory :profile, :class => Refinery::Profiles::Profile do
-    sequence(:title) { |n| "refinery#{n}" }
+    sequence(:prefix) { |n| "refinery#{n}" }
   end
 end
 

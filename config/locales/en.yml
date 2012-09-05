@@ -1,50 +1,8 @@
 en:
   refinery:
     plugins:
-      authors:
-        title: Authors
-      journals:
-        title: Journals
       profiles:
         title: Profiles
-    authors:
-      admin:
-        authors:
-          actions:
-            create_new: Add New Author
-            reorder: Reorder Authors
-            reorder_done: Done Reordering Authors
-          records:
-            title: Authors
-            sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Authors yet. Click "Add New Author" to add
-              your first author.
-          author:
-            view_live_html: View this author live <br/><em>(opens in a new window)</em>
-            edit: Edit this author
-            delete: Remove this author forever
-      authors:
-        show:
-          other: Other Authors
-    journals:
-      admin:
-        journals:
-          actions:
-            create_new: Add New Journal
-            reorder: Reorder Journals
-            reorder_done: Done Reordering Journals
-          records:
-            title: Journals
-            sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Journals yet. Click "Add New Journal" to add
-              your first journal.
-          journal:
-            view_live_html: View this journal live <br/><em>(opens in a new window)</em>
-            edit: Edit this journal
-            delete: Remove this journal forever
-      journals:
-        show:
-          other: Other Journals
     profiles:
       admin:
         profiles:
@@ -55,8 +13,7 @@ en:
           records:
             title: Profiles
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Profiles yet. Click "Add New Profile"
-              to add your first profile.
+            no_items_yet: There are no Profiles yet. Click "Add New Profile" to add your first profile.
           profile:
             view_live_html: View this profile live <br/><em>(opens in a new window)</em>
             edit: Edit this profile
@@ -66,21 +23,10 @@ en:
           other: Other Profiles
   activerecord:
     attributes:
-      refinery/authors/author:
+      'refinery/profiles/profile':
+        prefix: Prefix
         first_name: First Name
         middle_name: Middle Name
         last_name: Last Name
-      refinery/journals/journal:
-        name: Name
-        url: Url
-      refinery/profiles/profile:
-        title: Title
-        volume: Volume
-        issue: Issue
-        pages: Pages
-        date: Date
-        doi: Doi
-        pmcid: Pmcid
-        nihmsid: Nihmsid
-        pdf_copy: Pdf Copy
-        image: Image
+        suffix: Suffix
+        bio: Bio

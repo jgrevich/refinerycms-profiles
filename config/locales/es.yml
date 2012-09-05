@@ -1,0 +1,33 @@
+es:
+  refinery:
+    plugins:
+      profiles:
+        title: Profiles
+#        article: masculino/femenino
+    profiles:
+      admin:
+        profiles:
+          actions:
+            create_new: Crear nuevo profile
+            reorder: Reordenar profiles
+            reorder_done: Reordenación de profiles completada
+          records:
+            title: Profiles
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay profiles todavía. Pulsa en "Crear nuevo Profile" para crear tu primer profile.
+          profile:
+            view_live_html: Ver este profile como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este profile
+            delete: Borrar este profile para siempre
+      profiles:
+        show:
+          other: Otros profiles
+  activerecord:
+    attributes:
+      'refinery/profiles/profile':
+        prefix: Prefix
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        suffix: Suffix
+        bio: Bio
