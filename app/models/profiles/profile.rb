@@ -2,14 +2,10 @@ module Refinery
   module Profiles
     class Profile < Refinery::Core::BaseModel
       
-      acts_as_indexed :fields => [:first_name, :middle_name, :last_name, :bio]
-
-      alias_attribute :title, :name
-
-      default_scope :order => 'last_name ASC'
+      self.table_name = 'refinery_profiles'
 
       extend FriendlyId
-      friendly_id :friendly_id_source, :use => [:slugged, :globalize]
+      friendly_id :name, :use => :slugged
 
       belongs_to :photo, :class_name => '::Refinery::Image', :dependent => :destroy
       
@@ -21,7 +17,16 @@ module Refinery
       has_many :phones, :as => :phonable, :class_name => "::Refinery::Profiles::Phone"
       has_many :urls, :as => :urlable, :class_name => "::Refinery::Profiles::Url"
 
+      acts_as_indexed :fields => [:first_name, :middle_name, :last_name, :bio]
+
+      default_scope :order => 'last_name ASC'
+
+      alias_attribute :title, :name
+
+      attr_accessible :prefix, :first_name, :middle_name, :last_name, :suffix, :affiliations_attributes, :locations_attributes, :phones_attributes, :emails_attributes, :urls_attributes, :photo_id, :bio, :position, :building_acronym, :room_number
+
       accepts_nested_attributes_for :affiliations, :emails, :locations, :phones, :urls
+
       validates :first_name, :presence => true
       validates :last_name, :presence => true
       validates_associated :emails, :phones

@@ -12,7 +12,7 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.string :suffix
       t.text :bio
       t.integer :photo_id
-      t.string :cached_slug
+      t.string :slug
       t.integer :position
       t.timestamps
     end
@@ -32,7 +32,7 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index Refinery::Profiles::Affiliation.table_name, [:id, :department_id, :profile_id, :title_id]
+    add_index Refinery::Profiles::Affiliation.table_name, [:id, :department_id, :profile_id, :title_id], :name => "index_refinery_profiles_affiliations_on_id_did_pid_and_id"
 
     ## categories
     create_table Refinery::Profiles::Category.table_name, :id => true do |t|
@@ -49,7 +49,7 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.integer :profile_id
     end
     
-    add_index Refinery::Profiles::Categorization.table_name, [:id, :category_id, :profile_id ]
+    add_index Refinery::Profiles::Categorization.table_name, [:id, :category_id, :profile_id ], :name => 'index_refinery_profiles_categorizations_on_id_cid_and_pid'
     
     ## departments
     create_table Refinery::Profiles::Department.table_name, :id => true do |t|
@@ -66,14 +66,14 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.integer :organization_id
     end
 
-    add_index :refinery_profiles_departments_organizations, [:department_id, :organization_id]
+    add_index :refinery_profiles_departments_organizations, [:department_id, :organization_id], :name => 'index_refinery_profiles_departments_organizations_on_did_and_oid'
 
     create_table :refinery_profiles_departments_titles, :id => false do |t|
-      t.integer :profile_department_id
-      t.integer :profile_title_id
+      t.integer :department_id
+      t.integer :title_id
     end
 
-    add_index :refinery_profiles_departments_titles, [:department_id, :title_id]
+    add_index :refinery_profiles_departments_titles, [:department_id, :title_id], :name => 'index_refinery_profiles_departments_titles_on_did_and_tid'
 
     ## emails
     create_table Refinery::Profiles::Email.table_name, :id => true do |t|
@@ -138,8 +138,11 @@ class CreateProfilesStructure < ActiveRecord::Migration
     
     ## URLs
     create_table Refinery::Profiles::Url.table_name, :id => true do |t|
-      t.string :name
+      t.string :content
+      t.string :label
+      t.boolean :primary
       t.integer :position
+      t.references :urlable, :polymorphic => true
 
       t.timestamps
     end

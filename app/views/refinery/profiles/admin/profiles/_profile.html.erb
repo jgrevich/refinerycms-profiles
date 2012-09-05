@@ -1,18 +1,20 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(profile) -%>">
   <span class='title'>
-    <%= "#{profile.name}" %>
-    <span class="preview">&nbsp;</span>
+    <%= profile.name %>
+
   </span>
   <span class='actions'>
-    <%= link_to refinery_icon_tag("application_go.png"), refinery.profile_path(profile),
+    
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.profiles_profile_path(profile),
         :title => t('.view_live_html'),
         :target => "_blank" %>
-    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_admin_profile_path(profile),
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_profiles_admin_profile_path(profile),
          :title => t('.edit') %>
-    <%= link_to refinery_icon_tag("delete.png"), refinery.admin_profile_path(profile),
+    <%= link_to refinery_icon_tag("delete.png"), refinery.profiles_admin_profile_path(profile),
         :class => "cancel confirm-delete",
         :title => t('.delete'),
-        :confirm => t('message', :scope => 'shared.admin.delete', :title => profile.first_name),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => profile.prefix),
         :method => :delete %>
   </span>
 </li>

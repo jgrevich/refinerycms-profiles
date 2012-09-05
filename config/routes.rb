@@ -3,7 +3,6 @@ Refinery::Core::Engine.routes.append do
   # Frontend routes
   namespace :profiles do
     resources :profiles, :path => '', :only => [:index, :show]
-    
   end
 
   # Admin routes

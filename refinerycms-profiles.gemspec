@@ -3,16 +3,12 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-profiles'
-  s.version           = '0.1'
+  s.version           = '1.0'
   s.description       = 'Ruby on Rails Profiles extension for Refinery CMS'
-  s.date              = '2012-01-21'
+  s.date              = '2012-07-25'
   s.summary           = 'Profiles extension for Refinery CMS'
   s.require_paths     = %w(lib)
-  s.authors           = %w(Justin\ Grevich)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
-
-  # jquery autocomplete
-  s.add_dependency  'rails3-jquery-autocomplete'
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core',    '~> 2.0.5'

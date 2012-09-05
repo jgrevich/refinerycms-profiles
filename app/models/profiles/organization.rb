@@ -1,6 +1,7 @@
 module Refinery
   module Profiles
     class Organization < Refinery::Core::BaseModel
+      attr_accessible :name
 
       has_and_belongs_to_many :departments, :join_table => "departments_organizations", :class_name => "::Refinery::Profiles::Department"
       has_many :affiliaitons, :class_name => "::Refinery::Profiles::Affiliation"

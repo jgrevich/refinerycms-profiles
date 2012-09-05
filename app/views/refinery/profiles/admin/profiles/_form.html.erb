@@ -1,8 +1,5 @@
 <%= form_for [refinery, :profiles_admin, @profile] do |f| -%>
-  <%= render :partial => "/refinery/admin/error_messages", :locals => {
-          :object => f.object,
-          :include_object_name => true
-        } %>
+  <%= render :partial => "/refinery/admin/error_messages", :locals => { :object => f.object, :include_object_name => true } %>
 
   <div id="name">
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
@@ -15,7 +12,7 @@
     
     <div class="wym_box wym_box_0 wym_skin_refinery" style="width:238px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
       <div class='field'>
-        <%= f.select :prefix, ("<option value='' disabled='disabled'>Prefix</option>" + options_for_select(%w{Dr. Mr. Mrs. Ms. Miss Sir}))-%>
+        <%= f.select :prefix, raw("<option value='' disabled='disabled'>Prefix</option><option value=''></option>") + options_for_select(%w{Dr. Mr. Mrs. Ms. Miss Sir}, @profile.prefix)-%>
       </div>
 
       <div class='field'>
@@ -31,7 +28,7 @@
       </div>
 
       <div class='field'>
-        <%= f.select :suffix, ("<option value='' disabled='disabled'>Suffix</option>" + options_for_select(%w{I II III IV V}))-%>
+        <%= f.select :suffix, (raw("<option value='' disabled='disabled'>Suffix</option><option value=''></option>") + options_for_select(%w{I II III IV V}))-%>
       </div>
       
       
@@ -128,7 +125,11 @@
     </div>
 
     <div class="wym_box wym_box_0 wym_skin_refinery" style="width: 308px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
-      <%= render :partial => "/admin/profiles/profiles_image_picker", :locals => {:f => f, :field => :photo_id, :image => @profile.photo, :toggle_image_display => false} %>
+        <%= render '/refinery/admin/image_picker',
+                   :f => f,
+                   :field => :photo_id,
+                   :image => @profile.photo,
+                   :toggle_image_display => false %>
     </div>
   </div>
   
@@ -174,17 +175,18 @@
                :f => f,
                :continue_editing => true,
                :delete_title => t('delete', :scope => 'refinery.profiles.admin.profiles.profile') %>
-  <% end -%>
+
   
 <% end -%>
+
 <% content_for :javascripts do %>
   <script>
     $(document).ready(function(){
       page_options.init(false, '', '');
     });
   </script>
-  <%= javascript_include_tag('refinery/profiles') %>
-  <%= javascript_include_tag('autocomplete-rails') %>
+  <%= javascript_include_tag('refinery/profiles/backend') %>
+  <%#= javascript_include_tag('refinery/profiles/autocomplete-rails') %>
 <% end %>
 
-<% content_for :stylesheets, stylesheet_link_tag('refinery/sprofiles')%>
+<% content_for :stylesheets, stylesheet_link_tag('refinery/profiles/backend')%>

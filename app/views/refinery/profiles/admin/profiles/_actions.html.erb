@@ -1,22 +1,25 @@
-<nav id='actions' class='multilist'>
-  <ul class='search_list'>
-    <li class='not_a_link'>
-      <%= render "/refinery/admin/search", :url => refinery.profiles_admin_profiles_path %>
+<ul>
+  <% if ::Refinery::Profiles::Admin::ProfilesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.profiles_admin_profiles_path %>
     </li>
-  </ul>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_profiles_admin_profile_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Profiles::Admin::ProfilesController.sortable? && ::Refinery::Profiles::Profile.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Profiles"),
+                 refinery.profiles_admin_profiles_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
 
-  <ul class='collapsible_menu'>
-    <li class='not_a_link'>
-      <%= link_to t('.posts.title'), '#',
-                   :class => 'page_copy_icon' %>
-    </li>
-    <li>
-      <%= link_to t('.posts.manage'), refinery.profiles_admin_profiles_path,
-                   :class => 'page_icon' %>
-    </li>
-    <li>
-       <%= link_to t('.posts.new'), refinery.new_profiles_admin_profile_path,
-                   :class => 'page_add_icon' %>
-    </li>
-  </ul>
-</nav>
+    <%= link_to t('.reorder_done', :what => "Profiles"),
+                 refinery.profiles_admin_profiles_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

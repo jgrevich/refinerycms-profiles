@@ -3,8 +3,8 @@ module Refinery
     class ProfilesController < ::ApplicationController
 
       before_filter :find_all_profiles
- #     before_filter :find_page
-  
+      before_filter :find_page
+
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @profile in the line below:
@@ -12,7 +12,7 @@ module Refinery
       end
 
       def show
-        @profile = Refinery::Profiles::Profile.find(params[:id])
+        @profile = Profile.find(params[:id])
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @profile in the line below:
@@ -22,11 +22,11 @@ module Refinery
     protected
 
       def find_all_profiles
-        @profiles = Refinery::Profiles::Profile.paginate(:page => params[:page]).order('position ASC')
+        @profiles = Profile.order('position ASC')
       end
 
       def find_page
-        @page = Page.where(:link_url => "/profiles").first
+        @page = ::Refinery::Page.where(:link_url => "/profiles").first
       end
 
     end
