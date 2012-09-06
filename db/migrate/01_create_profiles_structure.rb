@@ -14,6 +14,8 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.integer :photo_id
       t.string :slug
       t.integer :position
+      t.string :token
+      t.datetime :token_created_at
       t.timestamps
     end
   
@@ -25,8 +27,6 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.integer :organization_id
       t.integer :profile_id
       t.integer :title_id
-      t.string :token
-      t.datetime :token_created_at
       t.date :start
       t.date :end
       t.integer :position

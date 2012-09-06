@@ -71,8 +71,6 @@ module Refinery
         self.class.previous(self).first
       end
 
-      protected
-
       def generate_token
         self.token = Profile.friendly_token
         self.token_created_at = Time.now
