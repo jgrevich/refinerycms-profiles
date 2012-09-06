@@ -98,6 +98,8 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.string :building_acronym
       t.integer :mail_code
       t.string :room_number
+      t.string :label
+      t.boolean :primary
       
       t.integer :position
       t.references :locatable, :polymorphic => true
