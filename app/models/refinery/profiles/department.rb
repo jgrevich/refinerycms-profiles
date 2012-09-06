@@ -10,6 +10,8 @@ module Refinery
       has_many :urls, :as => :urlable, :class_name => "::Refinery::Profiles::Url"
 
       validates :name, :presence => true, :uniqueness => true
+      
+      
   
       def to_s
         self.name

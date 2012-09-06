@@ -23,11 +23,6 @@ module Refinery
         link_to_function(name, ("add_fields(this, '#{association}', '#{escape_javascript(fields)}')"))
       end
 
-      def add_affiliation
-        Rails.logger.error 'add affil'
-        link_to_function('hi', "alert('hi')")
-      end
-
       def add_organization
         fields = fields_for :organization, Organization.new, :child_index => "new_organization" do |builder|
           render "organization_fields", :f => builder

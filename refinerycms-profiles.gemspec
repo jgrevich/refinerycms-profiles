@@ -9,10 +9,14 @@ Gem::Specification.new do |s|
   s.summary           = 'Profiles extension for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
+  s.authors           = %w(Justin\ Grevich)
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core',    '~> 2.0.5'
 
   # Development dependencies (usually used for testing)
   s.add_development_dependency 'refinerycms-testing', '~> 2.0.5'
+  
+  s.add_dependency  'rails3-jquery-autocomplete'
+  s.add_dependency    'acts-as-taggable-on', '~> 2.3.1'
 end

@@ -1,0 +1,14 @@
+<%= form_for @profile, :url => refinery.tupdate_path(@profile), :html => {:multipart => true} do |f| -%>
+    <%= render :partial => 'admin/profiles/profile_fields', :locals => {:f => f} %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+  <%= javascript_include_tag('refinery/refinerycms-profiles') %>
+  <%= javascript_include_tag('autocomplete-rails') %>
+<% end %>
+
+<% content_for :stylesheets, stylesheet_link_tag('refinery/refinerycms-profiles')%>

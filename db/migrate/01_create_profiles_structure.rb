@@ -25,6 +25,8 @@ class CreateProfilesStructure < ActiveRecord::Migration
       t.integer :organization_id
       t.integer :profile_id
       t.integer :title_id
+      t.string :token
+      t.datetime :token_created_at
       t.date :start
       t.date :end
       t.integer :position
@@ -55,6 +57,8 @@ class CreateProfilesStructure < ActiveRecord::Migration
     create_table Refinery::Profiles::Department.table_name, :id => true do |t|
       t.string :name
       t.integer :position
+      t.string :label
+      t.boolean :primary
 
       t.timestamps
     end

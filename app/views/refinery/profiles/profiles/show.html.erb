@@ -1,4 +1,4 @@
-<% content_for :body do %>
+<% content_for :body_content_left do %>
   <div id='profile'>
     <h2><%= @profile.name %></h2>
     <%= render :partial => 'affiliations', :locals => {:affiliations => @profile.affiliations}%>
@@ -6,8 +6,8 @@
     <%= image_fu @profile.photo, "360x480#c" %>
     
     <section class='contact_info'>
-      <p>Email <span><%= mail_to @profile.email %></span></p>
-      <p>Phone <span><%= phormat @profile.phone %></span></p>
+      <p>Email <span><%= mail_to @profile.email if @profile.email %></span></p>
+      <p>Phone <span><%= phormat @profile.phone if @profile.phone %></span></p>
       <% if @profile.url -%><p>URL <span><%= link_to @profile.url, @profile.url.content %></span></p><% end -%>
     </section>
     <section class='bio'>
@@ -20,7 +20,7 @@
   
 	<nav id="prevnext_nav">
 		<% if @profile.prev.present? -%>
-		<%= link_to profile_path(@profile.prev), :class => "prev button" do -%>
+		<%= link_to refinery.profile_path(@profile.prev), :class => "prev button" do -%>
 				<h3>Previous</h3>
 				<h4><%= @profile.prev.name %></h4>
 			<% end -%>
@@ -33,7 +33,7 @@
 	
 		
 		<% if @profile.next.present? -%>
-		<%= link_to profile_path(@profile.next), :class => "next button" do -%>
+		<%= link_to refinery.profile_path(@profile.next), :class => "next button" do -%>
 				<h3>Next</h3>
 				<h4><%= @profile.next.name %></h4>
 			<% end -%>
@@ -44,6 +44,8 @@
 			</span>
 		<% end -%>
 	</nav><!--#event_nav-->
+  
+  <div id='update_link'><small>Is this your profile? <%= link_to "Click here to update the content.", refinery.profiles_token_url(:email => @profile.email.content) if @profile.email %></small></div>
   
 <% end %>
 

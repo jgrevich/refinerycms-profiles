@@ -1,0 +1,221 @@
+<%= render :partial => "/refinery/admin/error_messages", :locals => { :object => f.object, :include_object_name => true } %>
+
+<div id="name">
+  <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+    <ul id='page_parts'>
+      <li class='ui-state-default<%= ' ui-state-active' if true %>'>
+        <%= link_to "Name", "#name" %>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="wym_box wym_box_0 wym_skin_refinery" style="width:238px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+    <div class='field'>
+      <%= f.select :prefix, options_for_select(%w{Dr. Mr. Mrs. Ms. Miss Sir}), :include_blank => "Prefix" -%>
+    </div>
+
+    <div class='field'>
+      <%= f.text_field :first_name, :placeholder => "First Name" -%>
+    </div>
+
+    <div class='field'>
+      <%= f.text_field :middle_name, :placeholder => "Middle Name" -%>
+    </div>
+
+    <div class='field'>
+      <%= f.text_field :last_name, :placeholder => "Last Name" -%>
+    </div>
+
+    <div class='field'>
+      <%= f.select :suffix, options_for_select(%w{I II III IV V}), :include_blank => "Suffix"-%>
+    </div>
+    
+    
+    <% if @profile_categories.any? -%>
+       <div class='field'>
+         <h2>Categories</h2>
+         <ul class="check_box_list">
+           <% @profile_categories.each do |category| -%>
+             <li>
+               <%= check_box_tag 'profile[category_ids][]', category.id,
+                                  @profile.categories.include?(category),
+                                 :id => (id="profile_category_ids_#{category.id}") %>
+               <%= label_tag 'profile[category_ids][]', category.name,
+                             :class => 'stripped',
+                             :for => id %>
+             </li>
+           <% end -%>
+         </ul>
+       </div>
+     <% end -%>
+  </div>
+</div>
+
+<div id="contact_info">
+  <div id="locations">
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <li class='ui-state-default<%= ' ui-state-active' if true %>'><%= link_to "Locations", "#locations" %></li>
+        <li class='ui-state-default'><%= link_to_add_fields "add location", f, :locations %></li>
+      </ul>
+    </div>
+
+    <div class="wym_box wym_box_0 wym_skin_refinery" style="width:280px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+      <%= f.fields_for :locations do |builder| -%>
+        <%= render "/refinery/profiles/admin/profiles/location_fields", :f => builder %>
+      <% end -%>
+    </div>
+  </div>
+
+  <div id="phones">
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <li class='ui-state-default<%= ' ui-state-active' if true %>'><%= link_to "Phones", "#phones" %></li>
+        <li class='ui-state-default'><%= link_to_add_fields "add phone number", f, :phones %></li>
+      </ul>
+    </div>
+    
+    <div class="wym_box wym_box_0 wym_skin_refinery" style="width:280px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+      <%= f.fields_for :phones do |builder| -%>
+        <%= render "/refinery/profiles/admin/profiles/phone_fields", :f => builder %>
+      <% end -%>
+    </div>
+  </div>
+
+  <div id="emails">
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <li class='ui-state-default<%= ' ui-state-active' if true %>'><%= link_to "Emails", "#emails" %></li>
+        <li class='ui-state-default'><%= link_to_add_fields "add email", f, :emails %></li>
+      </ul>
+    </div>
+
+    <div class="wym_box wym_box_0 wym_skin_refinery" style="width:280px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+      <%= f.fields_for :emails do |builder| -%>
+        <%= render "/refinery/profiles/admin/profiles/email_fields", :f => builder %>
+      <% end -%>
+    </div>
+  </div>
+  
+  <div id="urls">
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <li class='ui-state-default<%= ' ui-state-active' if true %>'><%= link_to "URLs", "#urls" %></li>
+        <li class='ui-state-default'><%= link_to_add_fields "add URL", f, :urls %></li>
+      </ul>
+    </div>
+    
+    <div class="wym_box wym_box_0 wym_skin_refinery" style="width:280px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+      <%= f.fields_for :urls do |builder| -%>
+        <%= render "/refinery/profiles/admin/profiles/url_fields", :f => builder %>
+      <% end -%>
+    </div>
+  </div>
+  
+</div>
+
+<div id='photo'>
+  <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+    <ul id='page_parts'>
+      <li class='ui-state-default<%= ' ui-state-active' if true %>'>
+        <%= link_to "Photo", "#photo" %>
+      </li>
+    </ul>
+  </div>
+
+    
+
+    <% if current_refinery_user %>
+      <div class="wym_box wym_box_0 wym_skin_refinery" style="width: 308px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+        <%= render :partial => "/refinery/profiles/admin/profiles/profiles_image_picker", :locals => {:f => f, :field => :photo_id, :image => @profile.photo, :toggle_image_display => false} %>
+      </div>
+    <% else %>
+      <div class="wym_box wym_box_0 wym_skin_refinery" style="width:280px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+        <label><%=t('.current_image') %></label>
+        <%= image_fu @profile.photo, '225x255>', :class => "brown_border" %>
+        <div class='field'>
+            <% # we must only hint at multiple when it's a new record otherwise update fails. %>
+            <%= f.file_field :photo %>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<div id="keywords">
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+        <ul id='page_parts'>
+          <li class='ui-state-default<%= ' ui-state-active' if true %>'>
+            <%= link_to "Research Keywords", "#keywords" %>
+          </li>
+        </ul>
+
+    </div>
+
+    <div class="wym_box wym_box_0 wym_skin_refinery">
+      <%= f.text_field :keyword_list, :value => @profile.keyword_list.to_s, :placeholder => "Comma separated keywords that describe your research", :size => 144, :tooltip => "Please make sure to comma separate your keywords." -%>
+    </div>
+</div>
+
+<div id="affiliations">
+  <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+    <ul id='page_parts'>
+      <li class='ui-state-default<%= ' ui-state-active' if true %>'>
+        <%= link_to "Affiliations", "#affiliations" %>
+      </li>
+      <li class='ui-state-default'><%= link_to_add_fields "add affiliation", f, :affiliations %></li>
+    </ul>
+    
+  </div>
+  
+  <div class="wym_box wym_box_0 wym_skin_refinery" style="width: 948px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; opacity: 1; ">
+    <%= f.fields_for :affiliations do |builder| -%>
+      <%= render "/refinery/profiles/admin/profiles/affiliation_fields", :f => builder %>
+    <% end -%>
+  </div>
+  
+</div>
+
+<div class='field'>
+  <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+    <ul id='page_parts'>
+      <% [:bio].each_with_index do |part, part_index| %>
+        <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+          <%= link_to part.to_s.titleize, "##{part}" %>
+        </li>
+      <% end %>
+    </ul>
+
+    <div id='page_part_editors'>
+      <% [:bio].each do |part| %>
+        <div class='page_part' id='<%= part %>'>
+          <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% if current_refinery_user %>
+  <%= render :partial => "/refinery/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.profiles.profile'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @profile.first_name)
+              } %>
+<% else %>
+<div class='form-actions<%= ' form-actions-dialog' if from_dialog? %>'>
+  <div class='form-actions-left'>
+    <%= submit_tag 'Update',
+                   :name => nil,
+                   :class => "wymupdate button",
+                   :tooltip => 'Click to update your profile, your can return to this form at anytime.' %>
+
+    <%= link_to('Cancel', token_url,
+                :title => 'This will remove any changes made on this form thus far',
+                :class => "close_dialog button") %>
+  </div>
+  <div class='form-actions-right'>
+  </div>
+</div>
+<%- end -%>

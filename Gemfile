@@ -2,6 +2,7 @@ source "http://rubygems.org"
 
 gemspec
 
+<<<<<<< HEAD
 gem 'refinerycms', '~> 2.0.3'
 
 # Database Configuration
@@ -69,3 +70,6 @@ group :assets do
 end
 
 gem 'jquery-rails', '~> 2.0.0'
+=======
+gem 'acts-as-taggable-on'
+>>>>>>> master
