@@ -1,5 +1,5 @@
-<%= form_for @profile, :url => refinery.tupdate_path(@profile), :html => {:multipart => true} do |f| -%>
-    <%= render :partial => 'admin/profiles/profile_fields', :locals => {:f => f} %>
+<%= form_for @profile, :url => refinery.profiles_tupdate_path(@profile), :html => {:multipart => true} do |f| -%>
+    <%= render :partial => '/refinery/profiles/admin/profiles/profile_fields', :locals => {:f => f} %>
 <% end -%>
 <% content_for :javascripts do %>
   <script>

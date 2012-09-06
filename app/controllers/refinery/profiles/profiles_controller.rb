@@ -38,7 +38,7 @@ module Refinery
           @profile = Profile.find_by_token(params[:token])
 
           if token_valid?
-#            @profile_categories = ProfileCategory.all
+            @profile_categories = Refinery::Profiles::Category.all
             render "token_edit", :layout => 'refinery/admin'
           else
             flash[:error] = "Token is expired or does not exist."
@@ -52,10 +52,10 @@ module Refinery
           if @profile.update_attributes(params[:profile]) && token_valid?
             # @profile.update_attribute :token, nil
             flash[:success] = "Profile updated successfully." # The link to edit this profile has been expired.
-            redirect_to token_url
+            redirect_to refinery.profiles_token_url
           else
             flash[:error] = "There was an error."
- #           @profile_categories = ProfileCategory.all
+            @profile_categories = Refinery::Profiles::Category.all
             render "token_edit", :layout => 'refinery/admin'
           end
         end
